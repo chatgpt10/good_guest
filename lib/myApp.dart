@@ -6,20 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:good_guest/route/routes.dart';
 import 'package:good_guest/route/application.dart';
 
-// class MyApp extends StatelessWidget {
-//   const MyApp({Key? key}) : super(key: key);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     final router = FluroRouter();
-//     Routes.configureRoutes(router);
-//     MyApp.router = router;
-//     return const MaterialApp(
-//       onGenerateRoute: router.generator,
-//     );
-//   }
-// }
-
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 

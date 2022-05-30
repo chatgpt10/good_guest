@@ -27,6 +27,38 @@ class PageContent extends StatelessWidget {
               },
             ),
           ),
+          Container(
+            width: 40.0,
+            height: 20.0,
+            child: ElevatedButton(
+              child: Text("没有地址的按钮"),
+              onPressed: () {
+                print("点击按钮");
+                Navigator.pushNamed(context, Routes.home);
+              },
+            ),
+          ),
+          Container(
+            width: 40.0,
+            height: 20.0,
+            child: ElevatedButton(
+              child: Text("没有地址的按钮1"),
+              onPressed: () {
+                print("点击按钮");
+                Navigator.pushNamed(context, '/aa');
+              },
+            ),
+          ),
+          Container(
+            width: 40.0,
+            height: 20.0,
+            child: ElevatedButton(
+              child: Text("房屋详情页"),
+              onPressed: () {
+                Navigator.pushNamed(context, '/room/191369');
+              },
+            ),
+          ),
         ],
       ),
     );
