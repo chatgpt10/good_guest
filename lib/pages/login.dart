@@ -12,6 +12,7 @@ class LoginPage extends StatelessWidget {
     return Container(
       child: const PageContent(
         name: '欢迎来到登录页',
+        RouterName: 'home',
       ),
     );
   }

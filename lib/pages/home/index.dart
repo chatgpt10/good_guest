@@ -10,7 +10,8 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: const PageContent(
-        name: '创世2.0',
+        name: '会飞的青蛙2.0',
+        RouterName: 'login',
       ),
     );
   }
