@@ -4,6 +4,7 @@ import 'package:fluro/fluro.dart';
 import 'package:good_guest/pages/home/index.dart';
 import '../pages/login.dart';
 import '../pages/not_found.dart';
+import '../pages/register.dart';
 import '../pages/room_detail/index.dart';
 
 // 对应处理函数
@@ -23,11 +24,16 @@ var _roomDetailHandler = Handler(
     handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
   return RoomDetailPage(RoomId: params['RoomId']![0]);
 });
+var _registerHandler = Handler(
+    handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
+  return RegisterPage();
+});
 
 // 路由配置
 class Routes {
   static String home = "/";
   static String login = "/login";
+  static String register = "/register";
   static String roomDetail = "/room/:RoomId";
   static void configureRoutes(FluroRouter router) {
     router.notFoundHandler = Handler(
@@ -37,6 +43,7 @@ class Routes {
     });
     router.define(home, handler: _homeHandler);
     router.define(login, handler: _loginHandler);
+    router.define(register, handler: _registerHandler);
     router.define(roomDetail, handler: _roomDetailHandler);
     router.notFoundHandler = _notFoundHandler;
   }

@@ -3,10 +3,12 @@ import 'package:good_guest/route/routes.dart';
 
 class PageContent extends StatelessWidget {
   final String name;
-  final String RouterName;
+  // final String RouterName;
 
-  const PageContent({Key? key, required this.name, required this.RouterName})
-      : super(key: key);
+  const PageContent({
+    Key? key,
+    required this.name,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
