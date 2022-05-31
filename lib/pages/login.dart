@@ -6,18 +6,17 @@ import 'package:flutter/material.dart';
 import 'package:good_guest/widgets/page_content.dart';
 
 // 创建无状态组件
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
-  // 1. 使用Scaffold
-  // 2. 添加appBar
-  // 3.完成Body部分
-  // 3.1用户名
-  // 3.2密码
-  // 3.2登录按钮
-  // 3.2注册链接
-  // 4.主题颜色- Theme
-  // 5.测试
 
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  // 定义一个bool值 用来显示账号密码
+  bool showPassword = true;
+  // 1. 使用Scaffold
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,6 +24,7 @@ class LoginPage extends StatelessWidget {
         title: const Text("登录"),
       ),
       body: SafeArea(
+        minimum: EdgeInsets.all(20.0),
         child: ListView(
           children: <Widget>[
             TextField(
@@ -32,18 +32,50 @@ class LoginPage extends StatelessWidget {
               decoration:
                   InputDecoration(label: Text("用户名"), hintText: '请输入用户名'),
             ),
+            Padding(
+              padding: EdgeInsets.all(5.0),
+            ),
             TextField(
               //文本输入框组件
-              decoration: InputDecoration(label: Text("密码"), hintText: '请输入密码'),
+              decoration: InputDecoration(
+                label: Text("密码"),
+                hintText: '请输入密码',
+                suffixIcon: IconButton(
+                  icon: Icon(
+                      showPassword ? Icons.visibility_off : Icons.visibility),
+                  onPressed: () {
+                    setState(() {
+                      showPassword = !showPassword;
+                    });
+                  },
+                ),
+              ),
+              obscureText: showPassword,
+            ),
+            Padding(
+              padding: EdgeInsets.all(5.0),
+            ),
+            RaisedButton(
+              color: Colors.pink,
+              child: Text(
+                "登录",
+                style: TextStyle(color: Colors.white),
+              ),
+              onPressed: () {
+                print("登录");
+              },
+            ),
+            Padding(
+              padding: EdgeInsets.all(5.0),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text("还没有账号,"),
-                FlatButton(
+                TextButton(
                     child: Text(
                       "去注册",
-                      style: TextStyle(color: Colors.green),
+                      style: TextStyle(color: Colors.pink),
                     ),
                     onPressed: () {
                       Navigator.pushReplacementNamed(context, 'rigister');
