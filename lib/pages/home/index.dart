@@ -2,9 +2,11 @@
 import 'package:flutter/material.dart';
 import 'package:good_guest/widgets/page_content.dart';
 
+import 'tab_index/index.dart';
+
 // 1.需要准备4个tab内容区域
 List<Widget> tabViewList = [
-  PageContent(name: "首页"),
+  TabIndex(),
   PageContent(name: "搜索"),
   PageContent(name: "咨询"),
   PageContent(name: "我的"),
