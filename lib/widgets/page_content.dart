@@ -20,7 +20,7 @@ class PageContent extends StatelessWidget {
             width: 40.0,
             height: 20.0,
             child: ElevatedButton(
-              child: Text("按钮"),
+              child: Text("登录页"),
               onPressed: () {
                 print("点击按钮");
                 Navigator.pushNamed(context, Routes.login);

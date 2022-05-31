@@ -29,7 +29,7 @@ class _MyAppState extends State<MyApp> {
       title: 'Fluro',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.pink,
       ),
       onGenerateRoute: Application.router.generator, //全局注册
     );
