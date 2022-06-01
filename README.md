@@ -1,8 +1,16 @@
-# good_guest
+# good_guest  Flutter3.0
 
 A new Flutter project.
 
 ## Getting Started
+
+## Flutter3.0 和 空安全导致的插件不兼容问题
+```dart
+$ flutter run --no-sound-null-safety
+$ flutter build --no-sound-null-safety
+```
+
+
 
 This project is a starting point for a Flutter application.
 

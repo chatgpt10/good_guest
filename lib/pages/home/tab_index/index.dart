@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:good_guest/widgets/common_swiper.dart';
 
 class TabIndex extends StatelessWidget {
   const TabIndex({Key? key}) : super(key: key);
@@ -9,7 +10,11 @@ class TabIndex extends StatelessWidget {
       appBar: AppBar(
         title: const Text("主页"),
       ),
-      body: const Text("这里就是身体"),
+      body: ListView(
+        children: <Widget>[
+          CommonSwiper(),
+        ],
+      ),
     );
   }
 }
