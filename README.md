@@ -9,6 +9,12 @@ A new Flutter project.
 $ flutter run --no-sound-null-safety
 $ flutter build --no-sound-null-safety
 ```
+### 问题
+```js
+相关: Flutter3 null safety
+ Warning: Operand of    
+null-aware operation '!' has type 'ImageCache' which excludes null.
+```
 
 
 

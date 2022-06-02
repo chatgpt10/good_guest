@@ -1,40 +1,46 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_swiper/flutter_swiper.dart';
-import 'package:goodhouse/widgets/common_image.dart';
+import 'package:flutter_advanced_networkimage/provider.dart';
 
-//定义图片数组
-const List<String> defaultImage=[
-   'http://ww3.sinaimg.cn/large/006y8mN6ly1g6e2tdgve1j30ku0bsn75.jpg',
-  'http://ww3.sinaimg.cn/large/006y8mN6ly1g6e2whp87sj30ku0bstec.jpg',
-  'http://ww3.sinaimg.cn/large/006y8mN6ly1g6e2tl1v3bj30ku0bs77z.jpg',
-];
-//准备轮播大小
-var imageWidth=750.0;//750px
-var imageHeight=424.0;
+final networkUrlRef=RegExp('^http');//网络图片
+final localworkUrlRef=RegExp('^static');//本地图片
 
-class CommonSwipper extends StatelessWidget {
-  final List<String> images;
-  const CommonSwipper({Key key,this.images=defaultImage}) : super(key: key);
+ class CommonImage extends StatelessWidget {
 
-  @override
-  Widget build(BuildContext context) {
-    var height=MediaQuery.of(context).size.width/imageWidth*imageHeight;// 符号/前面是获取屏幕的高度
-    return Container(
-      height:height,
-      // height: 100.0,//不要写死高度
-      child: new Swiper(
-        autoplay: true,
-        itemBuilder: (BuildContext context,int index){
-          return CommonImage(
-          // return new Image.network(
-            src:images[index],
-            fit:BoxFit.fill,
-          );
-        },
-        itemCount: images.length,
-        pagination: new SwiperPagination(),
-        control: new SwiperControl(),
+   final String src;
+   final double width;
+   final double height;
+   final BoxFit fit;//图片的适应模式类型
+
+  const CommonImage({this.src,Key key,  this.width, this.height, this.fit}) : super(key: key);//把this.src放在最前面
+
+
+ 
+   @override
+   Widget build(BuildContext context) {
+    if(networkUrlRef.hasMatch(src)){//正则判断是否网络图片
+      return Image(
+        width: width,
+        height: height,
+        fit: fit,
+        image: AdvancedNetworkImage(
+          src,
+          useDiskCache: true,//磁盘缓存
+          cacheRule: CacheRule(maxAge:Duration(days:7)),//保存时间
+          timeoutDuration: Duration(seconds: 20)//超时时间
         ),
-    );
-  }
-}
+       );
+    }
+    if(localworkUrlRef.hasMatch(src)){
+      return Image.asset(
+        src,
+        width: width,
+        height: height,
+        fit: fit,
+      );
+    }
+    assert(false,"图片地址不合法");//抛出异常
+    return Container();
+
+
+   }
+ }
