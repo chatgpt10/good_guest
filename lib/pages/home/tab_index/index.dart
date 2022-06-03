@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:good_guest/pages/home/info/index.dart';
 import 'package:good_guest/pages/home/tab_index/index_navigator.dart';
 import 'package:good_guest/pages/home/tab_index/index_recommend.dart';
 import 'package:good_guest/widgets/common_swiper.dart';
@@ -17,6 +18,8 @@ class TabIndex extends StatelessWidget {
           CommonSwiper(),
           IndexNavigator(),
           IndexRecommend(),
+          // 资讯
+          Info(),
         ],
       ),
     );
