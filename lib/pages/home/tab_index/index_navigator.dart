@@ -8,7 +8,7 @@ class IndexNavigator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 6.0, bottom: 6.0),
+      padding: const EdgeInsets.only(top: 6.0, bottom: 6.0),
       child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: indexNavigatorItemList

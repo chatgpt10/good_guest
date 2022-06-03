@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:good_guest/pages/home/tab_index/index_navigator.dart';
+import 'package:good_guest/pages/home/tab_index/index_recommend.dart';
 import 'package:good_guest/widgets/common_swiper.dart';
-
 
 class TabIndex extends StatelessWidget {
   const TabIndex({Key? key}) : super(key: key);
@@ -13,9 +13,10 @@ class TabIndex extends StatelessWidget {
         title: const Text("主页"),
       ),
       body: ListView(
-        children: <Widget>[
+        children: const <Widget>[
           CommonSwiper(),
           IndexNavigator(),
+          IndexRecommend(),
         ],
       ),
     );
