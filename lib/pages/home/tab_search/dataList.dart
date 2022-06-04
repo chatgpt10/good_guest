@@ -1,4 +1,5 @@
-// 搜索页数据准备
+// 搜索页面的静态数据
+
 class RoomListItemData {
   final String id;
   final String title;
@@ -6,16 +7,18 @@ class RoomListItemData {
   final String imageUrl;
   final List<String> tags;
   final int price;
-  const RoomListItemData(
-      {this.id,
-      this.title,
-      this.subTitle,
-      this.imageUrl,
-      this.tags,
-      this.price});
+
+  RoomListItemData({
+    required this.id,
+    required this.title,
+    required this.subTitle,
+    required this.imageUrl,
+    required this.tags,
+    required this.price,
+  });
 }
 
-const List<RoomListItemData> dataList = [
+List<RoomListItemData> dataList = [
   RoomListItemData(
     title: '朝阳门南大街 2室1厅 8300元',
     subTitle: "二室/114/东|北/朝阳门南大街",
