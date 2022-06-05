@@ -1,6 +1,7 @@
 // 引入核心库
 import 'package:flutter/material.dart';
 import 'package:good_guest/pages/home/tab_info/index.dart';
+import 'package:good_guest/pages/home/tab_search/index.dart';
 import 'package:good_guest/widgets/page_content.dart';
 
 import 'tab_index/index.dart';
@@ -8,7 +9,7 @@ import 'tab_index/index.dart';
 // 1.需要准备4个tab内容区域
 List<Widget> tabViewList = [
   TabIndex(),
-  PageContent(name: "搜索"),
+  TabSearch(),
   TabInfo(
     showTitle: false,
   ),

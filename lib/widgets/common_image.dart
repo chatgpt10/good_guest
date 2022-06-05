@@ -33,8 +33,8 @@ class CommonImage extends StatelessWidget {
         fit: fit,
         image: AdvancedNetworkImage(src,
             useDiskCache: true, //磁盘缓存
-            cacheRule: CacheRule(maxAge: Duration(days: 7)), //保存时间
-            timeoutDuration: Duration(seconds: 20) //超时时间
+            cacheRule: const CacheRule(maxAge: Duration(days: 7)), //保存时间
+            timeoutDuration: const Duration(seconds: 20) //超时时间
             ),
       );
     } else if (localworkUrlRef.hasMatch(src)) {

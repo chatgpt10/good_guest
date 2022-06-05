@@ -1,52 +1,54 @@
-// 搜索页数据准备
-class RoomListItemData {
-  final String id;
-  final String title;
-  final String subTitle;
-  final String imageUrl;
-  final List<String> tags;
-  final int price;
-  const RoomListItemData(
-      {this.id,
-      this.title,
-      this.subTitle,
-      this.imageUrl,
-      this.tags,
-      this.price});
-}
+import 'package:flutter/material.dart';
+import 'package:goodhouse/pages/home/tab_search/dataList.dart';
+import 'package:goodhouse/widgets/common_image.dart';
+import 'package:goodhouse/widgets/common_tag.dart';
 
-const List<RoomListItemData> dataList = [
-  RoomListItemData(
-    title: '朝阳门南大街 2室1厅 8300元',
-    subTitle: "二室/114/东|北/朝阳门南大街",
-    imageUrl:
-        "https://tva1.sinaimg.cn/large/006y8mN6ly1g6wtu9t1kxj30lo0c7796.jpg",
-    price: 1200,
-    id: 'roomDetail/1',
-    tags: ["近地铁", "集中供暖", "新上", "随时看房"],
-  ),
-  RoomListItemData(
-      title: '整租 · CBD总部公寓二期 临近国贸 精装修 随时拎包入住',
-      subTitle: "一室/110/西/CBD总部公寓二期",
-      imageUrl:
-          "https://tva1.sinaimg.cn/large/006y8mN6ly1g6wtu5s7gcj30lo0c7myq.jpg",
-      price: 6000,
-      id: 'roomDetail/1',
-      tags: ["近地铁", "随时看房"]),
-  RoomListItemData(
-      title: '朝阳门南大街 2室1厅 8300元',
-      subTitle: "二室/114/东|北/朝阳门南大街",
-      imageUrl:
-          "https://tva1.sinaimg.cn/large/006y8mN6ly1g6wtu5s7gcj30lo0c7myq.jpg",
-      price: 1200,
-      id: 'roomDetail/1',
-      tags: ["近地铁", "集中供暖", "新上", "随时看房"]),
-  RoomListItemData(
-      title: '整租 · CBD总部公寓二期 临近国贸 精装修 随时拎包入住',
-      subTitle: "一室/110/西/CBD总部公寓二期",
-      imageUrl:
-          "https://tva1.sinaimg.cn/large/006y8mN6ly1g6wtu9t1kxj30lo0c7796.jpg",
-      price: 6000,
-      id: 'roomDetail/1',
-      tags: ["近地铁", "随时看房"]),
-];
+class RoomListItemWidget extends StatelessWidget {
+  final RoomListItemData data;
+  const RoomListItemWidget(this.data, {Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context).pushNamed('room/2222');
+      },
+      child: Container(
+          padding: EdgeInsets.only(left: 10.0, right: 10.0, bottom: 10.0),
+          child: Row(
+            children: <Widget>[
+              CommonImage(
+                src: data.imageUrl,
+                width: 132.5,
+                height: 90.0,
+              ),
+              Padding(padding: EdgeInsets.only(left: 10.0)),
+              Expanded(
+                child: //表单组件
+                    Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                      Text(data.title,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(fontWeight: FontWeight.w600)),
+                      Text(data.subTitle,
+                          maxLines: 1, overflow: TextOverflow.ellipsis),
+                      Wrap(
+                          children: data.tags
+                              .map((item) => CommonTag(item))
+                              .toList()), //标签组件
+                      //  Wrap(children:data.tags.map((item)=>Text(item+';')).toList()),//标签组件
+                      Text(
+                        data.subTitle,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(color: Colors.orange),
+                      ),
+                    ]),
+              ),
+            ],
+          )),
+    );
+  }
+}
