@@ -1,6 +1,10 @@
 // Tab 我的页面
 import 'package:flutter/material.dart';
+import 'package:good_guest/pages/home/info/index.dart';
+import 'package:good_guest/pages/home/tab_profile/advertisement.dart';
 import 'package:good_guest/pages/home/tab_profile/header.dart';
+
+import 'function_button.dart';
 
 class TabProfile extends StatelessWidget {
   const TabProfile({Key? key}) : super(key: key);
@@ -27,6 +31,9 @@ class TabProfile extends StatelessWidget {
       body: ListView(
         children: const <Widget>[
           Header(),
+          FunctionButton(),
+          Advertisement(),
+          Info(showTitle: true), //启用当初设置的title
         ],
       ),
     );
