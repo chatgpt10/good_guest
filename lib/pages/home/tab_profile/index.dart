@@ -1,0 +1,30 @@
+// Tab 我的页面
+import 'package:flutter/material.dart';
+
+class TabProfile extends StatelessWidget {
+  const TabProfile({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        // 标题
+        title: const Text("我的"),
+        // 去掉顶部栏与下面的间隔
+        elevation: 0,
+        // 后置设置图标
+        actions: <Widget>[
+          IconButton(
+              onPressed: () {
+                print("跳转到设置Page");
+                Navigator.of(context).pushNamed('settings');
+              },
+              icon: const Icon(Icons.settings))
+        ],
+      ),
+      body: ListView(
+        children: <Widget>[],
+      ),
+    );
+  }
+}

@@ -1,6 +1,7 @@
 // 引入核心库
 import 'package:flutter/material.dart';
 import 'package:good_guest/pages/home/tab_info/index.dart';
+import 'package:good_guest/pages/home/tab_profile/index.dart';
 import 'package:good_guest/pages/home/tab_search/index.dart';
 import 'package:good_guest/widgets/page_content.dart';
 
@@ -13,7 +14,7 @@ List<Widget> tabViewList = [
   TabInfo(
     showTitle: false,
   ),
-  PageContent(name: "我的"),
+  TabProfile(),
 ];
 // 2.准备4底部 BottomNavigationBarItem
 List<BottomNavigationBarItem> barItemList = [
