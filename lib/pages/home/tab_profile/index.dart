@@ -1,5 +1,6 @@
 // Tab 我的页面
 import 'package:flutter/material.dart';
+import 'package:good_guest/pages/home/tab_profile/header.dart';
 
 class TabProfile extends StatelessWidget {
   const TabProfile({Key? key}) : super(key: key);
@@ -12,6 +13,7 @@ class TabProfile extends StatelessWidget {
         title: const Text("我的"),
         // 去掉顶部栏与下面的间隔
         elevation: 0,
+        backgroundColor: Colors.green,
         // 后置设置图标
         actions: <Widget>[
           IconButton(
@@ -23,7 +25,9 @@ class TabProfile extends StatelessWidget {
         ],
       ),
       body: ListView(
-        children: <Widget>[],
+        children: const <Widget>[
+          Header(),
+        ],
       ),
     );
   }
