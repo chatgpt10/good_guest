@@ -23,7 +23,7 @@ class TabProfile extends StatelessWidget {
           IconButton(
               onPressed: () {
                 print("跳转到设置Page");
-                Navigator.of(context).pushNamed('settings');
+                Navigator.of(context).pushNamed('setting');
               },
               icon: const Icon(Icons.settings))
         ],
