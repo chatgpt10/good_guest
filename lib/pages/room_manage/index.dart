@@ -1,6 +1,7 @@
 // 房屋管理 Tab页切换
 import 'package:flutter/material.dart';
 import 'package:good_guest/pages/home/tab_search/dataList.dart';
+import 'package:good_guest/widgets/common_floating_button.dart';
 import 'package:good_guest/widgets/room_list_item_widget.dart';
 
 class RoomManagePage extends StatelessWidget {
@@ -12,6 +13,11 @@ class RoomManagePage extends StatelessWidget {
       length: 2,
       initialIndex: 0,
       child: Scaffold(
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+        floatingActionButton: CommonFloatingButton('发布房源', () {
+          // 悬浮按钮
+          Navigator.of(context).pushNamed("roomAdd");
+        }),
         appBar: AppBar(
           title: const Text("房屋管理"),
           bottom: const TabBar(
