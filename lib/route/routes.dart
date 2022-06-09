@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
 import 'package:good_guest/pages/home/index.dart';
+import 'package:good_guest/pages/room_manage/index.dart';
 import 'package:good_guest/pages/setting.dart';
 import '../pages/login.dart';
 import '../pages/not_found.dart';
@@ -33,6 +34,10 @@ var _setting = Handler(
     handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
   return Setting();
 });
+var _roomManager = Handler(
+    handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
+  return RoomManagePage();
+});
 
 // 路由配置
 class Routes {
@@ -40,6 +45,7 @@ class Routes {
   static String login = "/login";
   static String register = "/register";
   static String setting = "/setting";
+  static String roomManager = "/roomManager";
   static String roomDetail = "/room/:RoomId";
   static void configureRoutes(FluroRouter router) {
     router.notFoundHandler = Handler(
@@ -50,6 +56,7 @@ class Routes {
     router.define(home, handler: _homeHandler);
     router.define(login, handler: _loginHandler);
     router.define(setting, handler: _setting);
+    router.define(roomManager, handler: _roomManager);
     router.define(register, handler: _registerHandler);
     router.define(roomDetail, handler: _roomDetailHandler);
     router.notFoundHandler = _notFoundHandler;

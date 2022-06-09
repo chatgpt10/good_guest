@@ -5,13 +5,18 @@ import 'package:good_guest/widgets/common_image.dart';
 class FunctionButtonWidget extends StatelessWidget {
   final FunctionButtonItem data;
 
-  const FunctionButtonWidget({super.key, required this.data});
+  const FunctionButtonWidget(
+    this.data, {
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        print("click me");
+        if (data.onTapHandle != null) {
+          data.onTapHandle(context);
+        }
       },
       child: Container(
         margin: const EdgeInsets.only(top: 10.0),

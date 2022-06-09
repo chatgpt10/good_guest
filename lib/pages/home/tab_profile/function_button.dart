@@ -11,7 +11,7 @@ class FunctionButton extends StatelessWidget {
         child: Wrap(
       spacing: 1.0,
       runSpacing: 1.0,
-      children: list.map((item) => FunctionButtonWidget(data: item)).toList(),
+      children: list.map((data) => FunctionButtonWidget(data)).toList(),
     ));
   }
 }
