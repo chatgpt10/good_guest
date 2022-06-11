@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:goodhouse/pages/home/tab_prifile/function_button_data.dart';
-import '../config.dart';
+import 'package:good_guest/config.dart';
+
+import '../pages/home/tab_profile/function_button_data.dart';
 import 'common_check_button.dart';
 
 class RoomApplianceItem {
@@ -9,10 +10,9 @@ class RoomApplianceItem {
   final bool isChecked;
 
   const RoomApplianceItem(this.title, this.iconPoint, this.isChecked);
-
-  // const RoomApplianceItem(this.title, this.iconPoint, this.isChecked);
 }
 
+// 定义数据
 const List<RoomApplianceItem> _dataList = [
   RoomApplianceItem('衣柜', 0xe918, false),
   RoomApplianceItem('洗衣机', 0xe917, false),

@@ -45,6 +45,9 @@ dev_dependencies:
   flutter_swiper: ^1.1.6
   # 图片封装
   flutter_advanced_networkimage_2: ^2.0.1
+  # 读取本地图片
+  image_picker: ^0.8.5+3
+
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -111,6 +114,10 @@ flutter:
   #       - asset: fonts/TrajanPro.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
+  fonts:
+    - family: CommonIcon
+      fonts:
+        - asset: static/fonts/iconfont.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

@@ -1,10 +1,15 @@
 // 房屋添加 Page
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:good_guest/widgets/common_floating_button.dart';
 import 'package:good_guest/widgets/common_form_item.dart';
+import 'package:good_guest/widgets/common_image_picker.dart';
 import 'package:good_guest/widgets/common_radio_form_item.dart';
 import 'package:good_guest/widgets/common_select_form_item.dart';
 import 'package:good_guest/widgets/common_title.dart';
+
+import '../../widgets/room_appliance.dart';
 
 class RoomAddPage extends StatefulWidget {
   RoomAddPage({Key? key}) : super(key: key);
@@ -123,9 +128,38 @@ class _RoomAddPageState extends State<RoomAddPage> {
             options: ['东', '南', '西', '北'],
           ),
           CommonTitle("房屋图像"),
+          CommonImagePicker(
+            onChange: (List<File> files) {},
+          ),
           CommonTitle("房屋标题"),
-          CommonTitle("房源信息"),
-          CommonTitle("房源信息"),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 10),
+            child: TextField(
+              controller: titleController,
+              // maxLength: 2,
+              decoration: const InputDecoration(
+                border: InputBorder.none,
+                hintText: '请输入标题,例如(整租,精装,小区名,2室)',
+              ),
+            ),
+          ),
+          CommonTitle("房源配置"),
+          RoomAppliance(
+            onChange: (List<RoomApplianceItem> value) {},
+          ),
+          CommonTitle("房屋描述"),
+          Container(
+            margin: EdgeInsets.only(bottom: 150),
+            padding: EdgeInsets.symmetric(horizontal: 10),
+            child: TextField(
+              controller: descController,
+              maxLines: 10,
+              decoration: InputDecoration(
+                border: InputBorder.none,
+                hintText: '请输入房屋描述',
+              ),
+            ),
+          ),
         ],
       ),
     );
